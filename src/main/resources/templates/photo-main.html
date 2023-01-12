@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title th:text="${title}"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+    h1{
+      margin-left: -41% !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="py-5 text-center container">
+
+      <div class="row py-lg-5">
+        <h1 class="container mt-5">Портфолио</h1>
+        <div th:each="el : ${fotos}" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <!--        <h3 th:text="${el.photo_path}"></h3>-->
+          <img th:src="@{${el.photo_path}}" />
+          <!--      <img  th:src="@{'data:image/png;base64,'  +${el.getImage()}}" />-->
+          <!--      <img  th:src="@{'data:image/jpeg;base64,' +${el.getImg()}}" />-->
+        </div>
+        <!--    <img th:src="@{/images/photomode_10052022_160852.png}"/>-->
+      </div>
+    </div>
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+  </body>
+</html>
