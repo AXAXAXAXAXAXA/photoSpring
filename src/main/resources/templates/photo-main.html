@@ -8,7 +8,14 @@
     h1{
       margin-left: -41% !important;
       }
-    </style>
+
+    body{
+      position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+    }
+</style>
   </head>
   <body>
     <header th:insert="blocks/header :: header"></header>
@@ -16,7 +23,7 @@
     <div class="py-5 text-center container">
 
       <div class="row py-lg-5">
-        <h1 class="container mt-5">Портфолио</h1>
+        <h1 class="container mt-2">Портфолио</h1>
         <div th:each="el : ${fotos}" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
           <!--        <h3 th:text="${el.photo_path}"></h3>-->
           <img th:src="@{${el.photo_path}}" />
